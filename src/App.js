@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import './css/main.scss';
-import './css/App.css';
 
 const App = () => {
   return (

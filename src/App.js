@@ -5,11 +5,11 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-import './css/main.scss';
+import './css/main.css';
 
 const App = () => {
   return (
-    <div className='wrapper' width='400px' m='auto'>
+    <div className='wrapper'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

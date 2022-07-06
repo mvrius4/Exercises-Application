@@ -1,7 +1,9 @@
-@import './components/navbar';
-
 @import './utils/variables';
 @import './utils/base';
+
+@import './components/navbar';
+@import './components/heroBanner';
+@import './components/searchExercises';
 
 * {
 	padding: 0;
@@ -55,15 +57,6 @@
 .detail-image {
 	width: 729px;
 	height: 742px;
-}
-
-.hero-banner-img {
-	position: absolute;
-	right: 40px;
-	top: 0px;
-	width: 700px;
-	height: 900px;
-	margin-top: -330px;
 }
 
 .exercise-card {

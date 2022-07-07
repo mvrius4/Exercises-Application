@@ -1,39 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import HorizontalScrollbar from './HorizontalScrollbar';
+import { fetchData, exerciseOptions } from '../utils/fetchData';
+import { GymContext } from '../pages/Home';
 
 const SearchExercises = () => {
     const [search, setSearch] = useState('');
+    const [bodyParts, setBodyParts] = useState([]);
+    const { setExercises } = useContext(GymContext);
+
+    useEffect(() => {
+        const fetchExercisesData = async () => {
+            const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+            setBodyParts(['all', ...bodyPartsData]);
+        };
+        fetchExercisesData();
+    }, []);
+
+    const handleSearch = async () => {
+        if (search) {
+            const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+
+            const searchedExercises = exercisesData.filter(
+                (exercise) => exercise.name.toLowerCase().includes(search)
+                    || exercise.target.toLowerCase().includes(search)
+                    || exercise.equipment.toLowerCase().includes(search)
+                    || exercise.bodyPart.toLowerCase().includes(search)
+            );
+            setSearch('');
+            setExercises(searchedExercises);
+        }
+    }
 
     return (
-        <section className='search-exercises' alignItems='center' mt='2rem' justifyContent='center' p='1.2rem'>
+        <section className='search-exercises'>
             <h2>
                 Awesome Exercises You <br />
                 Should Know
             </h2>
             <div className='search-exercises__input-container' position='relative' mb='5rem'>
                 <input
-                    // sx={{
-                    //     width: { lg: '800px', xs: '350px' },
-                    //     backgroundColor: '#fff',
-                    // }}
-                    // height='76px'
-                    value={search}
                     placeholder='Search Exercises'
                     type='text'
-                    onChange={(e) => { e.target.value.toLowerCase() }}
-                    onClick={() => { }}
+                    value={search}
+                    onChange={(e) => { setSearch(e.target.value.toLowerCase()) }}
+                    onClick={handleSearch}
                 />
-                <button
-                // sx={{
-                //     textTransform: 'none',
-                //     width: { lg: '175px', xs: '80px' },
-                //     fontSize: { lg: '1.2rem', xs: '.8rem' },
-                //     height: '56px',
-                //     position: 'absolute',
-                //     right: '0'
-                // }}
-                >
-                    Search
-                </button>
+                <button>Search</button>
+            </div>
+            <div className='search-exercises__results'>
+                <HorizontalScrollbar bodyParts={bodyParts} />
             </div>
         </section>
     )

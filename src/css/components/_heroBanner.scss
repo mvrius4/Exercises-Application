@@ -26,7 +26,7 @@ main {
 		width: 700px;
 		height: 900px;
 	}
-	@media screen and (min-width: $xl) {
+	@media screen and (min-width: $lg) {
 		.hero-banner__main-text {
 			display: block;
 		}

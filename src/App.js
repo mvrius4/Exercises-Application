@@ -5,7 +5,7 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-import './css/main.css';
+import './assets/css/main.css';
 
 const App = () => {
   return (

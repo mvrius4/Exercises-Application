@@ -6,7 +6,7 @@ import { GymContext } from '../pages/Home';
 const SearchExercises = () => {
     const [search, setSearch] = useState('');
     const [bodyParts, setBodyParts] = useState([]);
-    const { setExercises } = useContext(GymContext);
+    const { exercises, setExercises } = useContext(GymContext);
 
     useEffect(() => {
         const fetchExercisesData = async () => {
@@ -43,9 +43,9 @@ const SearchExercises = () => {
                     type='text'
                     value={search}
                     onChange={(e) => { setSearch(e.target.value.toLowerCase()) }}
-                    onClick={handleSearch}
+                    onSubmit={handleSearch}
                 />
-                <button>Search</button>
+                <button onClick={handleSearch}>Search</button>
             </div>
             <div className='search-exercises__results'>
                 <HorizontalScrollbar bodyParts={bodyParts} />

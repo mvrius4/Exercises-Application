@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GymContext } from '../pages/Home';
 
 import CardImage from '../assets/icons/gym.png';
 
-const BodyPart = ({ part }) => {
+const BodyPart = ({ title }) => {
+    const { setBodyPart } = useContext(GymContext);
+
     return (
-        <>
+        <div onClick={() => { setBodyPart(title) }} className='search-exercises__body-part'>
             <img src={CardImage} alt='img' className='search-exercises__body-part-icon' />
-            <p>{part}</p>
-        </>
+            <p>{title}</p>
+        </div>
     )
 }
 

@@ -1,0 +1,43 @@
+main {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+	padding: 2rem;
+	.hero-banner__main-text {
+		display: none;
+		color: $blue300;
+		font-size: 200px;
+		font-weight: 700;
+		&::selection {
+			color: $white;
+			background-color: $blue300;
+		}
+	}
+	.hero-banner__img {
+		position: absolute;
+		display: none;
+		right: 1rem;
+		top: 0;
+		transform: translateY(-6rem);
+		transform-origin: top;
+		margin-top: -1rem;
+		width: 450px;
+	}
+	@media screen and (min-width: $md) {
+		.hero-banner__main-text {
+			display: block;
+		}
+		.hero-banner__img {
+			display: block;
+		}
+	}
+	@media screen and (min-width: $lg) {
+		.hero-banner__img {
+			width: 650px;
+			right: 2rem;
+		}
+	}
+}

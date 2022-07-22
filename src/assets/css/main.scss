@@ -1,0 +1,43 @@
+@import './utils/variables';
+@import './utils/base';
+
+@import './components/navbar';
+@import './components/heroBanner';
+@import './components/searchExercises';
+@import './components/exercises';
+@import './components/exerciseDetail';
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: $white;
+		color: $black;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+.exercise-video {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	width: 387px;
+	height: 381px;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-banner-img {
+		display: none;
+	}
+
+	.exercise-video {
+		width: 320px;
+		height: 300px;
+	}
+}

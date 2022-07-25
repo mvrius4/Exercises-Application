@@ -9,7 +9,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(2rem, 3vw, 4.5rem);
+  font-size: clamp(1.75rem, 2.5vw, 4rem);
   font-weight: 700;
 }
 
@@ -80,18 +80,16 @@ input::placeholder {
 
 .left-arrow,
 .right-arrow {
+  width: 25px;
+  height: 25px;
   cursor: pointer;
-}
-.left-arrow:focus, .left-arrow:hover,
-.right-arrow:focus,
-.right-arrow:hover {
-  transform: scale(1.1);
 }
 
 .blue-bg {
   color: rgb(230, 230, 230);
   background: rgba(0, 160, 200, 0.5);
-  border-radius: 6rem;
+  font-weight: 700;
+  border-radius: 5rem;
   padding: 0.5rem;
 }
 
@@ -208,11 +206,12 @@ main .hero-banner__img {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding: 1rem;
   cursor: pointer;
   transform: scale(1);
   transition: 0.3s all ease-in-out;
 }
-.search-exercises .search-exercises__results .react-horizontal-scrolling-menu--wrapper .react-horizontal-scrolling-menu--inner-wrapper .react-horizontal-scrolling-menu--scroll-container .search-exercises__body-part:hover, .search-exercises .search-exercises__results .react-horizontal-scrolling-menu--wrapper .react-horizontal-scrolling-menu--inner-wrapper .react-horizontal-scrolling-menu--scroll-container .search-exercises__body-part:focus {
+.search-exercises .search-exercises__results .react-horizontal-scrolling-menu--wrapper .react-horizontal-scrolling-menu--inner-wrapper .react-horizontal-scrolling-menu--scroll-container .search-exercises__body-part:hover {
   transform: scale(1.1);
 }
 .search-exercises .search-exercises__results .react-horizontal-scrolling-menu--wrapper .react-horizontal-scrolling-menu--inner-wrapper .react-horizontal-scrolling-menu--scroll-container .search-exercises__body-part .search-exercises__body-part-icon {
@@ -240,7 +239,8 @@ main .hero-banner__img {
   align-items: center;
   gap: 1rem;
 }
-.exercises .exercises__exercise-card {
+
+.exercises__exercise-card {
   width: 300px;
   height: 300px;
   display: flex;
@@ -253,10 +253,14 @@ main .hero-banner__img {
   transition: 0.3s all ease-in-out;
   cursor: pointer;
 }
-.exercises .exercises__exercise-card img {
-  width: 200px;
+.exercises__exercise-card P {
+  text-transform: capitalize;
 }
-.exercises .exercises__exercise-card:hover {
+.exercises__exercise-card img {
+  width: 250px;
+  height: 250px;
+}
+.exercises__exercise-card:hover {
   transform: scale(1.1);
 }
 
@@ -302,13 +306,61 @@ main .hero-banner__img {
 .exercise-detail .exercise-detail__details .exercise-detail__details-text .exercise-detail__details-info .details-info img {
   width: 50px;
 }
-.exercise-detail .exercise-detail__details .exercise-detail__details-image .detail-image {
+.exercise-detail .exercise-detail__details .exercise-detail__details-image .details-image {
   width: 300px;
 }
 @media screen and (min-width: 1080px) {
-  .exercise-detail .exercise-detail__details .exercise-detail__details-image .detail-image {
+  .exercise-detail .exercise-detail__details .exercise-detail__details-image .details-image {
     width: 600px;
   }
+}
+.exercise-detail .exercise-detail__exercise-videos .exercise-detail__exercises {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.exercise-detail .exercise-detail__exercise-videos .exercise-detail__exercises .exercise-video {
+  width: 300px;
+  text-decoration: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.exercise-detail .exercise-detail__exercise-videos .exercise-detail__exercises .exercise-video img {
+  width: 300px;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+.exercise-detail .exercise-detail__exercise-videos .exercise-detail__exercises .exercise-video img:hover {
+  transform: scale(1.2);
+}
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__target .react-horizontal-scrolling-menu--scroll-container,
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__equipment .react-horizontal-scrolling-menu--scroll-container {
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__target .react-horizontal-scrolling-menu--arrow-left,
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__target .react-horizontal-scrolling-menu--arrow-right,
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__equipment .react-horizontal-scrolling-menu--arrow-left,
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__equipment .react-horizontal-scrolling-menu--arrow-right {
+  align-items: center;
+}
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__target .exercises__exercise-card.detail,
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__equipment .exercises__exercise-card.detail {
+  width: 225px;
+  height: 225px;
+}
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__target .exercises__exercise-card.detail img,
+.exercise-detail .exercise-details__similar-exercises .similar-exercises__equipment .exercises__exercise-card.detail img {
+  width: 175px;
+  height: 175px;
+}
+
+.loader {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  align-items: center;
 }
 
 * {
@@ -321,26 +373,6 @@ main .hero-banner__img {
   background-color: rgb(230, 230, 230);
   color: rgb(45, 45, 45);
 }
-
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-.exercise-video {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 387px;
-  height: 381px;
-  text-decoration: none;
-}
-
-@media screen and (max-width: 1200px) {
-  .hero-banner-img {
-    display: none;
-  }
-  .exercise-video {
-    width: 320px;
-    height: 300px;
-  }
+*::-webkit-scrollbar {
+  width: 0;
 }/*# sourceMappingURL=main.css.map */

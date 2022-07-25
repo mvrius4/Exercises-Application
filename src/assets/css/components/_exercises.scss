@@ -5,24 +5,28 @@
 	justify-content: space-evenly;
 	align-items: center;
 	gap: 1rem;
-	.exercises__exercise-card {
-		width: 300px;
-		height: 300px;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		gap: 0.25rem;
-		margin-bottom: 2.5rem;
-		border-top: 4px solid $primaryColor;
-		transform: scale(1);
-		transition: 0.3s all ease-in-out;
-		cursor: pointer;
-		img {
-			width: 200px;
-		}
-		&:hover {
-			transform: scale(1.1);
-		}
+}
+.exercises__exercise-card {
+	width: 300px;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 0.25rem;
+	margin-bottom: 2.5rem;
+	border-top: 4px solid $primaryColor;
+	transform: scale(1);
+	transition: 0.3s all ease-in-out;
+	cursor: pointer;
+	P {
+		text-transform: capitalize;
+	}
+	img {
+		width: 250px;
+		height: 250px;
+	}
+	&:hover {
+		transform: scale(1.1);
 	}
 }
 .exercises-footer {

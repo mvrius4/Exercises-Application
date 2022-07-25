@@ -27,10 +27,53 @@
 			}
 		}
 		.exercise-detail__details-image {
-			.detail-image {
+			.details-image {
 				width: 300px;
 				@media screen and (min-width: $lg) {
 					width: 600px;
+				}
+			}
+		}
+	}
+	.exercise-detail__exercise-videos {
+		.exercise-detail__exercises {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2rem;
+			padding: 2rem 1rem;
+			.exercise-video {
+				width: 300px;
+				text-decoration: none;
+				border-radius: 1rem;
+				overflow: hidden;
+				img {
+					width: 300px;
+					transform: scale(1.1);
+					transition: all 0.3s ease-in-out;
+					&:hover {
+						transform: scale(1.2);
+					}
+				}
+			}
+		}
+	}
+	.exercise-details__similar-exercises {
+		.similar-exercises__target,
+		.similar-exercises__equipment {
+			.react-horizontal-scrolling-menu--scroll-container {
+				gap: 1rem;
+				padding: 2rem 1rem;
+			}
+			.react-horizontal-scrolling-menu--arrow-left,
+			.react-horizontal-scrolling-menu--arrow-right {
+				align-items: center;
+			}
+			.exercises__exercise-card.detail {
+				width: 225px;
+				height: 225px;
+				img {
+					width: 175px;
+					height: 175px;
 				}
 			}
 		}

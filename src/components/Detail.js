@@ -36,8 +36,8 @@ const Detail = ({ exerciseDetail }) => {
                     {name} is targeting your {bodyPart}, helping you to strengthen it!
                 </p>
                 <div className='exercise-detail__details-info'>
-                    {extraDetail.map(detail => (
-                        <div className='details-info' key={detail.name}>
+                    {extraDetail.map((detail, index) => (
+                        <div key={index} className='details-info'>
                             <img src={detail.icon} alt={detail.name} />
                             <p>{detail.name}</p>
                         </div>
@@ -45,7 +45,7 @@ const Detail = ({ exerciseDetail }) => {
                 </div>
             </div>
             <div className='exercise-detail__details-image'>
-                <img src={gifUrl} alt='details-img' className='detail-image' />
+                <img src={gifUrl} alt='details-img' className='details-image' />
             </div>
         </div >
     )

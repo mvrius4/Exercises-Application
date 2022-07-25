@@ -48,7 +48,7 @@ const SearchExercises = () => {
                 <button onClick={handleSearch}>Search</button>
             </div>
             <div className='search-exercises__results'>
-                <HorizontalScrollbar bodyParts={bodyParts} />
+                <HorizontalScrollbar content={bodyParts} isBodyParts='true' />
             </div>
         </section>
     )

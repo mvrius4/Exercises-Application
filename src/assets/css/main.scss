@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
 @import './utils/variables';
 @import './utils/base';
 
@@ -7,13 +9,14 @@
 @import './components/exercises';
 @import './components/exerciseDetail';
 @import './components/loader';
+@import './components/footer';
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 	body {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: 'Roboto', sans-serif;
 		background-color: $white;
 		color: $black;
 	}

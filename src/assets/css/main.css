@@ -297,6 +297,9 @@ main .hero-banner__img {
   flex-direction: column;
   gap: 1rem;
 }
+.exercise-detail .exercise-detail__details .exercise-detail__details-text h2 {
+  text-transform: capitalize;
+}
 .exercise-detail .exercise-detail__details .exercise-detail__details-text .exercise-detail__details-info .details-info {
   display: flex;
   flex-direction: row;

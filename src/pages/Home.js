@@ -17,8 +17,8 @@ const Home = () => {
     return (
         <GymContext.Provider value={gymContextValues}>
             <HeroBanner />
-            {/* <SearchExercises />
-            <Exercises /> */}
+            <SearchExercises />
+            <Exercises />
         </GymContext.Provider>
     )
 }

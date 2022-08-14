@@ -6,12 +6,12 @@ import { GymContext } from '../pages/Home';
 const SearchExercises = () => {
     const [search, setSearch] = useState('');
     const [bodyParts, setBodyParts] = useState([]);
-    const { exercises, setExercises } = useContext(GymContext);
+    const { setExercises } = useContext(GymContext);
 
     useEffect(() => {
         const fetchExercisesData = async () => {
             const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
-            setBodyParts(['all', bodyPartsData]);
+            setBodyParts(['all', ...bodyPartsData]);
         };
         fetchExercisesData();
     }, []);
